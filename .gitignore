@@ -1,3 +1,7 @@
+.idea/
+target/
+Report/
+
 # Compiled class file
 *.class
 

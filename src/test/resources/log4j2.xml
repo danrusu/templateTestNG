@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="APP_LOG_ROOT">Report/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n"/>
+        </Console>
+        <RollingFile name="fileLogger" fileName="${APP_LOG_ROOT}/log.txt"
+                     filePattern="${APP_LOG_ROOT}/%d{yyyy-MM-dd}.log">
+            <!-- Except Error -->
+            <ThresholdFilter level="error" onMatch="DENY"
+                             onMismatch="ACCEPT"/>
+            <PatternLayout>
+                <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} - %msg%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="Console" level="ALL"/>
+            <AppenderRef ref="fileLogger" level="ALL"/>
+        </Root>
+    </Loggers>
+</Configuration>
