@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+
     <Properties>
         <Property name="LOG_ROOT">logs</Property>
         <Property name="LOG_MESSAGE_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
-
     </Properties>
 
     <Appenders>
@@ -12,35 +12,29 @@
             <PatternLayout pattern="${LOG_MESSAGE_PATTERN}"/>
         </Console>
 
+        <RollingFile name="fileLogger"
+                     fileName="${LOG_ROOT}/info.log"
+                     filePattern="${LOG_ROOT}/info_%d{yyyy_MM_dd_HH_mm_ss}.log">
 
-        <!--        <RollingFile name="fileLogger" fileName="${LOG_ROOT}/all.log" filePattern="${APP_LOG_ROOT}/%d{yyyy-MM-dd}.log">
-
-                    &lt;!&ndash; Except Error &ndash;&gt;
-                    <ThresholdFilter level="error" onMatch="DENY" onMismatch="ACCEPT"/>
-                    <PatternLayout>
-                        <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} - %msg%n
-                        </pattern>
-                    </PatternLayout>
-                    <Policies>
-                        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
-                    </Policies>
-                </RollingFile>-->
-
-        <RollingFile name="fileLogger" fileName="${LOG_ROOT}/app-info.log"
-                     filePattern="${LOG_ROOT}/app-info-%d{yyyy-MM-dd}.log">
             <PatternLayout>
                 <pattern>${LOG_MESSAGE_PATTERN}</pattern>
             </PatternLayout>
+
             <Policies>
-                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <OnStartupTriggeringPolicy/>
             </Policies>
+
         </RollingFile>
+
     </Appenders>
 
     <Loggers>
-        <Root level="ALL">
+
+    <Root level="ALL">
             <AppenderRef ref="console" level="ALL"/>
             <AppenderRef ref="fileLogger" level="ALL"/>
         </Root>
+
     </Loggers>
+
 </Configuration>
