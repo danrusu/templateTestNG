@@ -13,7 +13,7 @@ mvn clean test -Dgroups=integration,end2end
 
 - Run tests from different testNG suite XML
 ```bash
-mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=apiK
+mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
 ```
 
 ***
