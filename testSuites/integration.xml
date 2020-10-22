@@ -2,17 +2,9 @@
 <suite name="Integration Tests" verbose="1">
 
     <test name="Integration Test1" parallel="methods" thread-count="8">
-        <classes>
-            <class name="integration.IntegrationTest1">
-            </class>
-        </classes>
-    </test>
-
-    <test name="Integration Test2" parallel="methods" thread-count="8">
-        <classes>
-            <class name="integration.IntegrationTest2">
-            </class>
-        </classes>
+        <packages>
+            <package name="integration"></package>
+        </packages>
     </test>
 
 </suite>
