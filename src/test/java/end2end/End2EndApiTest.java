@@ -8,14 +8,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
-public class End2EndTest2 {
-    private final Logger logger = LogManager.getLogger(End2EndTest2.class);
+public class End2EndApiTest {
+    private final Logger logger = LogManager.getLogger(End2EndApiTest.class);
 
     @Test(
-            groups = {"end2end"}
+            groups = {"end2end", "api"}
     )
-    public void end2endTest2() {
-        logger.info("end2endTest2");
+    public void end2endTestApi1() {
+        logger.info("end2endTestApi1");
 
         assertThatThrownBy(() -> assertThat("test1").isEqualTo("test0"))
                 .hasMessageMatching(".*expected.*test\\[0\\].*")

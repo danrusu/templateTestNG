@@ -18,7 +18,7 @@ public class IntegrationTest1 {
     private final Logger logger = LogManager.getLogger(IntegrationTest1.class);
 
     @Test(
-            groups = {"integration"},
+            groups = {"integration", "api"},
             expectedExceptions = SoftAssertionError.class,
             expectedExceptionsMessageRegExp = ".*Expecting.*<501>.*between.*[200, 300].*"
     )

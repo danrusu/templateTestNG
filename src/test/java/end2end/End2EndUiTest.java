@@ -9,8 +9,8 @@ import ro.qatools.base.Person;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class End2EndTest1 {
-    private final Logger logger = LogManager.getLogger(End2EndTest1.class);
+public class End2EndUiTest {
+    private final Logger logger = LogManager.getLogger(End2EndUiTest.class);
     private static Person person;
 
     @BeforeClass
@@ -20,12 +20,12 @@ public class End2EndTest1 {
     }
 
     @Test(
-            groups = {"end2end"}
+            groups = {"end2end", "ui"}
     )
-    public void end2endTest1() {
+    public void end2endUiTest1() {
         person = new Person("John", "Doe", 30, false);
 
-        logger.info("end2endTest1");
+        logger.info("end2endUiTest1");
         assertThat(person.getFullName()).isEqualTo("John Doe");
     }
 }
