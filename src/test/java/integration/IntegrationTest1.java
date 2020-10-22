@@ -27,7 +27,7 @@ public class IntegrationTest1 {
 
         final SoftAssertions softly = new SoftAssertions();
 
-        Stream.of(501, 202, 200, 203)
+        Stream.of(501, 202, 200, 404, 203)
                 .sorted()
                 .map(PostmanEchoService.STATUS::getUrl)
                 .peek(logger::info)

@@ -106,7 +106,7 @@
 
                     <suiteXmlFiles>
                         <suiteXmlFile>${testNGXml}</suiteXmlFile>
-                        <!--                        <suiteXmlFile>src/test/resources/test_parameters.xml</suiteXmlFile>-->
+                        <!-- <suiteXmlFile>src/test/resources/test_parameters.xml</suiteXmlFile> -->
                     </suiteXmlFiles>
 
                     <failIfNoTests>true</failIfNoTests>
