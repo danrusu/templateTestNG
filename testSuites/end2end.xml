@@ -2,10 +2,9 @@
 <suite name="End2End Tests" verbose="1">
 
     <test name="End2End Test1">
-        <classes>
-            <class name="end2end.End2EndTest1">
-            </class>
-        </classes>
+        <packages>
+            <package name="end2end"></package>
+        </packages>
     </test>
 
 </suite>
