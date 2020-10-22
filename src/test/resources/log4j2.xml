@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <Property name="APP_LOG_ROOT">Report/logs</Property>
+        <Property name="LOG_ROOT">logs</Property>
+        <Property name="LOG_MESSAGE_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
+
     </Properties>
+
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n"/>
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_MESSAGE_PATTERN}"/>
         </Console>
-        <RollingFile name="fileLogger" fileName="${APP_LOG_ROOT}/log.txt"
-                     filePattern="${APP_LOG_ROOT}/%d{yyyy-MM-dd}.log">
-            <!-- Except Error -->
-            <ThresholdFilter level="error" onMatch="DENY"
-                             onMismatch="ACCEPT"/>
+
+
+        <!--        <RollingFile name="fileLogger" fileName="${LOG_ROOT}/all.log" filePattern="${APP_LOG_ROOT}/%d{yyyy-MM-dd}.log">
+
+                    &lt;!&ndash; Except Error &ndash;&gt;
+                    <ThresholdFilter level="error" onMatch="DENY" onMismatch="ACCEPT"/>
+                    <PatternLayout>
+                        <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} - %msg%n
+                        </pattern>
+                    </PatternLayout>
+                    <Policies>
+                        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                    </Policies>
+                </RollingFile>-->
+
+        <RollingFile name="fileLogger" fileName="${LOG_ROOT}/app-info.log"
+                     filePattern="${LOG_ROOT}/app-info-%d{yyyy-MM-dd}.log">
             <PatternLayout>
-                <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} - %msg%n
-                </pattern>
+                <pattern>${LOG_MESSAGE_PATTERN}</pattern>
             </PatternLayout>
             <Policies>
-                <TimeBasedTriggeringPolicy interval="1"
-                                           modulate="true"/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
         </RollingFile>
     </Appenders>
+
     <Loggers>
         <Root level="ALL">
-            <AppenderRef ref="Console" level="ALL"/>
+            <AppenderRef ref="console" level="ALL"/>
             <AppenderRef ref="fileLogger" level="ALL"/>
         </Root>
     </Loggers>

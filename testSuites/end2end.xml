@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="End2End Tests" verbose="1">
+
+    <test name="End2End Test1">
+        <classes>
+            <class name="end2end.End2EndTest1">
+            </class>
+        </classes>
+    </test>
+
+</suite>
