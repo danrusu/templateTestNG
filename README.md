@@ -13,14 +13,14 @@ mvn clean test -Dgroups=integration,end2end
 
 - Run tests from different testNG suite XML
 ```bash
-mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
+mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=apiK
 ```
 
 ***
 
 #### 2. Tech stack
 - [Java JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
-- [Maven 3](https://maven.apache.org/) 
+- [Maven 3](https://maven.apache.org/download.cgi) 
 - [TestNG](https://testng.org/doc/) - test runner
 - [Log4j2](https://logging.apache.org/log4j/2.x/) - logging
 - [AssertJ](https://assertj.github.io/doc/) - fluent assertions
