@@ -3,20 +3,20 @@
 
     <test name="Unit Test">
         <classes>
-            <class name="ro.qatools.base.UnitTest1">
+            <class name="ro.qatools.postman.UnitTest1">
             </class>
         </classes>
     </test>
 
     <test name="Integration Test">
         <packages>
-            <package name="integration"></package>
+            <package name="project.demo.integration"></package>
         </packages>
     </test>
 
     <test name="End2End Test">
         <packages>
-            <package name="end2end"></package>
+            <package name="project.demo.end2end"></package>
         </packages>
     </test>
 

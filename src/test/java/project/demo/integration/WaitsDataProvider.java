@@ -1,4 +1,4 @@
-package integration;
+package project.demo.integration;
 
 import org.testng.annotations.DataProvider;
 

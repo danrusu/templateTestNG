@@ -1,11 +1,11 @@
-package ro.qatools.base;
+package project.demo.end2end;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Person {
+public class User {
 
     private final String firstName;
     private final String lastName;

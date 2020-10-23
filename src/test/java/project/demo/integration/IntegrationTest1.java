@@ -1,11 +1,11 @@
-package integration;
+package project.demo.integration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertionError;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
-import postman.PostmanEchoService;
+import ro.qatools.postman.PostmanEchoService;
 
 import java.util.stream.Stream;
 

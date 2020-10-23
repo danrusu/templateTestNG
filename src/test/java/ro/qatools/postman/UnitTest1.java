@@ -1,4 +1,4 @@
-package ro.qatools.base;
+package ro.qatools.postman;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

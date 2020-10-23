@@ -3,7 +3,7 @@
 
     <test name="Integration Test1" parallel="methods" thread-count="8">
         <packages>
-            <package name="integration"></package>
+            <package name="project.demo.integration"></package>
         </packages>
     </test>
 

@@ -3,7 +3,7 @@
 
     <test name="End2End Test1">
         <packages>
-            <package name="end2end"></package>
+            <package name="project.demo.end2end"></package>
         </packages>
     </test>
 
