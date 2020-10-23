@@ -16,8 +16,9 @@ public class End2EndApiTest {
     )
     public void end2endTestApi1() {
         logger.info("end2endTestApi1");
+        final String textFetchedFromUI = "test1";
 
-        assertThatThrownBy(() -> assertThat("test1").isEqualTo("test0"))
+        assertThatThrownBy(() -> assertThat(textFetchedFromUI).isEqualTo("test0"))
                 .hasMessageMatching(".*expected.*test\\[0\\].*")
                 .hasMessageMatching(".*but was.*test\\[1\\].*");
     }

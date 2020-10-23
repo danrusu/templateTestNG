@@ -7,15 +7,15 @@ import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import ro.qatools.postman.PostmanEchoService;
 
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 
 
-public class IntegrationTest1 {
-    private final Logger logger = LogManager.getLogger(IntegrationTest1.class);
+public class IntegrationTest {
+    private final Logger logger = LogManager.getLogger(IntegrationTest.class);
 
     @Test(
             groups = {"integration", "api"},
@@ -27,9 +27,9 @@ public class IntegrationTest1 {
 
         final SoftAssertions softly = new SoftAssertions();
 
-        Stream.of(501, 202, 200, 404, 203)
+        IntStream.of(501, 202, 200, 404, 203)
                 .sorted()
-                .map(PostmanEchoService.STATUS::getUrl)
+                .mapToObj(PostmanEchoService.STATUS::getUrl)
                 .peek(logger::info)
                 .forEach(url -> softly.assertThat(getStatusCode(url)).isBetween(200, 300));
 
