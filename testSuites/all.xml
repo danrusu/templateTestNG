@@ -3,7 +3,7 @@
 
     <test name="Unit Test">
         <classes>
-            <class name="ro.qatools.postman.UnitTest1">
+            <class name="ro.qatools.postman.PostmanEchoServiceTest">
             </class>
         </classes>
     </test>
