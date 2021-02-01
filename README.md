@@ -1,7 +1,7 @@
 ## JDK8 TestNG framework template 
 
 #### 1. Test Execution 
-- Run all unit, integration, end2end tests from [all.xml](./testSuites/all.xml)
+- Run all unit, integration, end2end tests from [all.xml](../aviratest/testSuites/all.xml)
 ```bash
 mvn clean test 
 ```
