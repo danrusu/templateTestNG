@@ -1,17 +1,33 @@
 ## JDK11 TestNG framework template
 
-#### 1. Test Execution 
+#### 1. Test Execution
+
 - Run all unit, integration, end2end tests from [all.xml](../aviratest/testSuites/all.xml)
+
 ```bash
 mvn clean test 
 ```
 
+- Run single test class
+
+```bash
+mvn clean test -Dtest=IntegrationTest 
+```
+
+- Run single test method
+
+```bash
+mvn clean test -Dtest=IntegrationTest#integrationTest1 
+```
+
 - Run tests filtering by groups
+
 ```bash
 mvn clean test -Dgroups=integration,end2end
 ```
 
 - Run tests from different testNG suite XML
+
 ```bash
 mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
 ```
@@ -24,7 +40,7 @@ mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
 - [Maven 3](https://maven.apache.org/download.cgi)
 - [Lombok](https://projectlombok.org/features/all)
 - [TestNG](https://testng.org/doc/) - test runner
-- [SLF4g](http://www.slf4j.org/) - logging
+- [SLF4g](http://www.slf4j.org/manual.html) & [Logback](http://logback.qos.ch/manual/index.html) - logging
 - [AssertJ](https://assertj.github.io/doc/) - fluent assertions
 - [RestAssured](https://rest-assured.io/) - API testing
 - [Vavr.io](https://www.vavr.io/)
@@ -32,8 +48,9 @@ mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
 ***
 
 #### 3. Project structure 
+
 - [maven POM](./pom.xml)
-- [logger configuration](./src/test/resources/log4j2.xml)
+- [logger configuration](./src/test/resources/logback.xml)
 - [testNG XML suites](./testSuites)
 
 ***
