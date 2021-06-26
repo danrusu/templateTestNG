@@ -1,4 +1,4 @@
-## JDK8 TestNG framework template 
+## JDK11 TestNG framework template
 
 #### 1. Test Execution 
 - Run all unit, integration, end2end tests from [all.xml](../aviratest/testSuites/all.xml)
@@ -19,13 +19,14 @@ mvn clean test -DtestNGXml=testSuites/end2end.xml -Dgroups=api
 ***
 
 #### 2. Tech stack
-- [Java JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
-- [Maven 3](https://maven.apache.org/download.cgi) 
+
+- [Java JDK11](https://www.oracle.com/ro/java/technologies/javase-jdk11-downloads.html)
+- [Maven 3](https://maven.apache.org/download.cgi)
+- [Lombok](https://projectlombok.org/features/all)
 - [TestNG](https://testng.org/doc/) - test runner
-- [Log4j2](https://logging.apache.org/log4j/2.x/) - logging
+- [SLF4g](http://www.slf4j.org/) - logging
 - [AssertJ](https://assertj.github.io/doc/) - fluent assertions
 - [RestAssured](https://rest-assured.io/) - API testing
-- [Lombok](https://projectlombok.org/features/all)
 - [Vavr.io](https://www.vavr.io/)
 
 ***

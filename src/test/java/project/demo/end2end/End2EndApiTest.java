@@ -1,21 +1,19 @@
 package project.demo.end2end;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-
+@Slf4j
 public class End2EndApiTest {
-    private final Logger logger = LogManager.getLogger(End2EndApiTest.class);
 
     @Test(
             groups = {"end2end", "api"}
     )
     public void end2endTestApi1() {
-        logger.info("end2endTestApi1");
+        log.info("end2endTestApi1");
         final String textFetchedFromUI = "test1";
 
         assertThatThrownBy(() -> assertThat(textFetchedFromUI).isEqualTo("test0"))

@@ -1,7 +1,6 @@
 package project.demo.integration;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.SoftAssertionError;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
@@ -13,9 +12,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 
-
+@Slf4j
 public class IntegrationTest {
-    private final Logger logger = LogManager.getLogger(IntegrationTest.class);
 
     @Test(
             groups = {"integration", "api"},
@@ -23,14 +21,14 @@ public class IntegrationTest {
             expectedExceptionsMessageRegExp = ".*Expecting.*<501>.*between.*[200, 300].*"
     )
     public void integrationTest1() {
-        logger.info("integrationTest1");
+        log.info("integrationTest1");
 
         final SoftAssertions softly = new SoftAssertions();
 
         IntStream.of(501, 202, 200, 404, 203)
                 .sorted()
                 .mapToObj(PostmanEchoService.STATUS::getUrl)
-                .peek(logger::info)
+                .peek(log::info)
                 .forEach(url -> softly.assertThat(getStatusCode(url)).isBetween(200, 300));
 
         softly.assertAll();
@@ -46,10 +44,10 @@ public class IntegrationTest {
             dataProviderClass = WaitsDataProvider.class
     )
     public void integrationTest2(final int delay) {
-        logger.info(String.format("integrationTest2(%s)", delay));
+        log.info(String.format("integrationTest2(%s)", delay));
 
         final String delayUrl = PostmanEchoService.DELAY.getUrl(delay);
-        logger.info(String.format("Test %s", delayUrl));
+        log.info(String.format("Test %s", delayUrl));
 
         given().when().get(delayUrl)
                 .then()

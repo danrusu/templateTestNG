@@ -1,15 +1,13 @@
 package project.demo.end2end;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@Slf4j
 public class End2EndUiTest {
-    private final Logger logger = LogManager.getLogger(End2EndUiTest.class);
     private static User user;
 
     @BeforeClass
@@ -24,7 +22,7 @@ public class End2EndUiTest {
     public void end2endUiTest1() {
         user = new User("John", "Doe", 30, false);
 
-        logger.info("end2endUiTest1");
+        log.info("end2endUiTest1");
         assertThat(user.getFullName()).isEqualTo("John Doe");
     }
 }
