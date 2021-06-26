@@ -1,5 +1,6 @@
 package project.demo.integration;
 
+import dataprovider.WaitsDataProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.SoftAssertionError;
 import org.assertj.core.api.SoftAssertions;

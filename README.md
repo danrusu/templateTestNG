@@ -11,7 +11,7 @@ mvn clean test
 - Run single test class
 
 ```bash
-mvn clean test -Dtest=IntegrationTest 
+mvn clean test -Dtest=End2EndUiTest 
 ```
 
 - Run single test method
