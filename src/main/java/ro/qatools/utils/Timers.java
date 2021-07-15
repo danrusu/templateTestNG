@@ -15,11 +15,11 @@ public class Timers {
     }
 
     public static long getDurationInMillisFrom(final String timestampName){
-        return Optional.ofNullable(timestamps.get(timestampName))
+        return getCurrentTime() - Optional.ofNullable(timestamps.get(timestampName))
                 .orElseThrow(() -> new RuntimeException(
-                        format("timestamp %s does not exist", timestampName)
-                )
-        );
+                                format("timestamp %s does not exist", timestampName)
+                        )
+                );
     }
 
     private static long getCurrentTime() {
